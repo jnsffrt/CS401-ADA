@@ -1,9 +1,3 @@
 theme: jekyll-theme-minimal
 title: Truth behind ratings
 description: Truth behind ratings
-show_downloads: True
-navigation:
-  - title: Home
-    url: /
-  - title: Example
-    url: example
