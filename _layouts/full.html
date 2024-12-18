@@ -136,8 +136,27 @@ layout: full
                 Subsection 1
               </p>
               <p class="text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                Users can leave text comments in addition to their digital notes. 
+                We all have different representations of numerical values, but texts 
+                are richer and can help us highlight differences between the comment 
+                and the final score given.
+                <br>
+                To analyze this, we used the pre-trained NLP model <kbd>nlptown/bert-base-multilingual-uncased-sentiment</kbd>,
+                which for each comment predicts an our between 1 and 5 corresponding to the text.
+
+                <img src="{{ '/assets/plots/nlp/plot1.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-400">
+                  Figure X : TODO
+                </p>
+
+                <ul class="list-disc bg-red-100 p-4 ps-8 m-4">
+                  TODO
+                  <li>Analyze distribution (mean, global shape)</li>
+                  <li>Explain that shape is different since NLP model predicts integer rating</li>
+                </ul>
               </p>
+
+              <div class="flourish-embed flourish-chord" data-src="visualisation/20854207"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20854207/thumbnail" width="100%" alt="chord visualization" /></noscript></div>
             </div>
           </div>
         </section>
@@ -214,7 +233,6 @@ layout: full
     </div>
     
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <script type="module" src="{{ '/assets/js/plot.js' | relative_url }}"></script>
 
   {% if site.google_analytics %}
     <script>
