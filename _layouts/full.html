@@ -8,16 +8,213 @@ layout: full
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link rel="icon" type="image/png"  href="assets/img/favicon.png">
     <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">
     <meta name="viewport" content="width=device-width">
   </head>
-  <body>
-    <div class="wrapper">
+  <body>    
+    <div class="header flex items-center justify-center bg-gradient-to-br from-amber-700 to-amber-300 h-72">
+        <h1 class="text-balance text-5xl font-semibold text-white">{{ site.title | default: site.github.repository_name }}</h1>
+    </div>
+    <!-- <div class="wrapper">
 
       {{ content }}
 
+    </div> -->
+    <div class="bg-gray-50 py-16 sm:py-16">
+      <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <section class="mt-8">
+          <div class="section-title pt-3 pb-12">
+            <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 1</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Inflation you said ?
+            </p>
+          </div>
+          <div class="section-body">  
+            <div class="grid grid-cols-4 gap-3">
+              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-3">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Rating inflation over time
+                </p>
+                <p class="text-gray-600">
+                  Our quest to find the secrets behind the ratings begins with an analysis of inflation. Indeed, 
+                  the data covers the period 2004 - 2017, and it seems that users are rating better and better over time. 
+                  Figure 1 clearly shows that average scores increase over time.
+                </p>
+                <img class="mt-3" src="{{ '/assets/plots/inflation/plot1.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-400">
+                  Figure 1 : Average beer rating over time
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5">
+                <div class="flex items-center">
+                  <div class="w-full">
+                    <p class="text-md text-gray-600 font-semibold my-3">BeerAdvocate</p>
+                    <div class="grid grid-cols-2 mb-6">
+                      <div>
+                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.73</h3>
+                        <p class="text-center text-sm text-gray-400">2004</p>
+                      </div>
+                      <div>
+                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.97</h3>
+                        <p class="text-center text-sm text-gray-400">2016</p>
+                      </div>
+                    </div>
+                    <p class="text-md text-gray-600 font-semibold my-3">RateBeer</p>
+                    <div class="grid grid-cols-2 mb-6">
+                      <div>
+                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.10</h3>
+                        <p class="text-center text-sm text-gray-400">2004</p>
+                      </div>
+                      <div>
+                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.38</h3>
+                        <p class="text-center text-sm text-gray-400">2016</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-center text-sm text-gray-400">
+                  Average ratings at the beginning and at the end of the period
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Time series decomposition
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Inflation is due to a general trend, but there are several other time parameters that could impact ratings. 
+                  We want to correct the general inflation trend, but without taking into account noise or seasonal effects 
+                  (e.g. presence of beer festivals, conferences, promotions, etc.). To exclude these effects, we decomposed 
+                  the time series of scores into 3 series using an additive model: trend, seasonal effect and noise. We 
+                  can see from Figure 2 that these effects are indeed noticeable. 
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/inflation/plot4.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-400">
+                  Figure 2 : Time serie decomposition of average rating over time
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-1">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Omnis velit deserunt cupiditate molestiae
+                </p>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis velit deserunt cupiditate molestiae, provident itaque blanditiis odio perspiciatis earum similique corrupti repudiandae ex neque dolor officia quia cum quas iure?
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-3">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Inflation correction
+                </p>
+                <p class="text-gray-600">
+                  Now it is time to correct the inflation and the increasing trend of ratings. We computed a reference average 
+                  at the beginning of the period and we applied a correction to the ratings by dividing them by the ratio of the
+                  current average to the reference average. The corrected rating averages are shown in Figure 3.
+                </p>
+                <img src="{{ '/assets/plots/inflation/plot3.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-400">
+                  Figure 3 : Average beer rating over time corrected for inflation
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-300 my-16">
+
+        <section>
+          <div class="section-title pb-5">
+            <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 2</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              NLP predictions
+            </p>
+          </div>
+          <div class="section-body">
+            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
+              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                Subsection 1
+              </p>
+              <p class="text-gray-600">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-300 my-16">
+
+        <section>
+          <div class="section-title pb-5">
+            <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 3</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Titre 3
+            </p>
+          </div>
+          <div class="section-body">
+            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
+              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                Subsection 1
+              </p>
+              <p class="text-gray-600">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-300 my-16">
+
+        <section>
+          <div class="section-title pb-5">
+            <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 4</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Titre 4
+            </p>
+          </div>
+          <div class="section-body">
+            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
+              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                Subsection 1
+              </p>
+              <p class="text-gray-600">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-300 my-16">
+
+        <section>
+          <div class="section-title pb-5">
+            <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 5</h2>
+            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Titre 5
+            </p>
+          </div>
+          <div class="section-body">
+            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
+              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                Subsection 1
+              </p>
+              <p class="text-gray-600">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
+
+    <div class="header flex items-center justify-center bg-gradient-to-tl from-amber-700 to-amber-300 h-72 px-6">
+      <h1 class="text-balance text-xl font-semibold text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, dolores aut sunt amet nihil reprehenderit voluptas commodi harum, accusantium consectetur sint quis praesentium voluptates, non quaerat ut fugit dignissimos hic?
+      </h1>
+    </div>
+    
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/plot.js' | relative_url }}"></script>
 
   {% if site.google_analytics %}
     <script>
