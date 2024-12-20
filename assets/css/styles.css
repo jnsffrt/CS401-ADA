@@ -267,3 +267,10 @@ footer {
     color:#444;
   }
 } */
+
+.wave {
+  background-color: #f9fafb;
+  background-image: url('wave.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

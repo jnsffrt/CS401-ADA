@@ -10,12 +10,28 @@ layout: full
     <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ["\\(", "\\)"]]
+        }
+      }
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ["\\(", "\\)"]]
+        }
+      }
+    </script>
     <meta name="viewport" content="width=device-width">
   </head>
   <body>    
-    <div class="header flex items-center justify-center bg-gradient-to-br from-amber-700 to-amber-300 h-72">
-        <h1 class="text-balance text-5xl font-semibold text-white">{{ site.title | default: site.github.repository_name }}</h1>
+    <div class="header flex items-center justify-center bg-gradient-to-b from-amber-700 to-amber-300 h-72">
+        <h1 class="text-balance text-6xl font-semibold text-white animate-jump animate-once animate-ease-in-out">{{ site.title | default: site.github.repository_name }}</h1>
     </div>
+    <div class="wave w-screen h-52"></div>
     <!-- <div class="wrapper">
 
       {{ content }}
@@ -23,98 +39,135 @@ layout: full
     </div> -->
     <div class="bg-gray-50 py-16 sm:py-16">
       <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <section class="mt-8">
-          <div class="section-title pt-3 pb-12">
+        <!-- 
+        
+            INTRODUCTION
+        
+        -->
+        <section>
+          <div class="section-title pb-8">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 1</h2>
             <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-              Inflation you said ?
+              Introduction
             </p>
           </div>
-          <div class="section-body">  
+          <div class="section-body">
+            <div class="rounded-lg px-8 py-4 mt-3 w-4/6 mx-auto border-2 border-amber-600 shadow-lg">
+              <p class="text-gray-600 text-justify">
+                After many years of loyal services, beer has become (one of) our's best friends. Beer is always here when you need 
+                it, after a hard day at work, in front of our favorite sports event, to celebrate good news... Having a beer is always 
+                a good experience, so why not share this magnificent moment with the world. Beer ratings websites have been developed, 
+                giving you the opportunity to share your feelings after drinking one by leaving it a rating and a comment for the more 
+                passionates. Two of these websites are RateBeer and BeerAdvocate, and they will allow you to rate each beer you drink, 
+                and view the ratings of your fellow beer-lover pals. Behind such a simple and innocent process created for beer lovers, 
+                a question arose: what's really behind all these notes? One of humans characteristics is to be so similar and so different 
+                at the same time, how is this applicable to beers rating? In this project we will try to understand the ratings, how the 
+                users and their features, the beer style and the preferences will impact the ratings. We may have many stereotypes about 
+                the ratings and how they are influenced, we conducted parts of our project based on these stereotypes actively seeking 
+                answers into our data.
+              </p>
+            </div>
             <div class="grid grid-cols-4 gap-3">
-              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-3">
+              <div class="rounded-lg px-8 py-4 my-3 col-span-4">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Rating inflation over time
-                </p>
-                <p class="text-gray-600">
-                  Our quest to find the secrets behind the ratings begins with an analysis of inflation. Indeed, 
-                  the data covers the period 2004 - 2017, and it seems that users are rating better and better over time. 
-                  Figure 1 clearly shows that average scores increase over time.
-                </p>
-                <img class="mt-3" src="{{ '/assets/plots/inflation/plot1.png' | relative_url }}" alt="">
-                <p class="text-center text-sm text-gray-400">
-                  Figure 1 : Average beer rating over time
-                </p>
-              </div>
-              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5">
-                <div class="flex items-center">
-                  <div class="w-full">
-                    <p class="text-md text-gray-600 font-semibold my-3">BeerAdvocate</p>
-                    <div class="grid grid-cols-2 mb-6">
-                      <div>
-                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.73</h3>
-                        <p class="text-center text-sm text-gray-400">2004</p>
-                      </div>
-                      <div>
-                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.97</h3>
-                        <p class="text-center text-sm text-gray-400">2016</p>
-                      </div>
-                    </div>
-                    <p class="text-md text-gray-600 font-semibold my-3">RateBeer</p>
-                    <div class="grid grid-cols-2 mb-6">
-                      <div>
-                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.10</h3>
-                        <p class="text-center text-sm text-gray-400">2004</p>
-                      </div>
-                      <div>
-                        <h3 class="text-center text-4xl font-black bg-gradient-to-br from-amber-700 to-orange-300 bg-clip-text text-transparent">3.38</h3>
-                        <p class="text-center text-sm text-gray-400">2016</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="text-center text-sm text-gray-400">
-                  Average ratings at the beginning and at the end of the period
-                </p>
-              </div>
-              <div class="rounded-lg px-8 py-4 col-span-2">
-                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Time series decomposition
+                  Ratings explanation
                 </p>
                 <p class="text-gray-600 text-justify">
-                  Inflation is due to a general trend, but there are several other time parameters that could impact ratings. 
-                  We want to correct the general inflation trend, but without taking into account noise or seasonal effects 
-                  (e.g. presence of beer festivals, conferences, promotions, etc.). To exclude these effects, we decomposed 
-                  the time series of scores into 3 series using an additive model: trend, seasonal effect and noise. We 
-                  can see from Figure 2 that these effects are indeed noticeable. 
+                  After enjoying a good beer (a beer is always good even when it's not), BeerAdvocate and Ratebeer will 
+                  ask you to focus for a few more minutes to give it a complete rating. The two websites divided the rating 
+                  in 5 subcategories, giving them different weights. The rating process of the beer starts when the glorious
+                  beverage is served, you will have to evaluate how good looking the beer is based on different criteria 
+                  such as its color, its head and its visual carbonation through its <strong>Appearance</strong> rating.<br><br>
+
+                  Now that you've analyzed the look, not so fast, wait a bit before drinking, you will have to smell it so 
+                  you can note its scent through the <strong>Aroma</strong> rating. You're now free to do what you're here for : 
+                  drink your beer. Doing so, you will have to conduct two analyses, first evaluate the flavors in the beer for 
+                  the <strong>Taste</strong> rating , and secondly feel its body, carbonation and astringency for the <strong>Palate</strong> 
+                  rating.<br><br>
+                  
+                  Once all of these points are clear for you, you can relax and enjoy your beer on your own, without thinking 
+                  of the consequences of your actions. Once the beer is finished, you can take some time to think about the 
+                  exquisite moment you just experienced to give an <strong>Overall</strong> rating to the beer. The two websites 
+                  will then compute a weighted average of these to compute your final rating for the tested beer.<br><br>
+
+                  Each criterion is scored out of 5, and the sites then calculate a weighted average using the weights shown in 
+                  Figure 1. While RateBeer places a greater importance to the Overall rating, Beer Advocate has more consideration 
+                  for the Taste. On the other hand, for the two websites, Appearance and Palate are considered less essential for the 
+                  final rating.
                 </p>
               </div>
-              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-2">
-                <img class="mt-3" src="{{ '/assets/plots/inflation/plot4.png' | relative_url }}" alt="">
-                <p class="text-center text-sm text-gray-400">
-                  Figure 2 : Time serie decomposition of average rating over time
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-4">
+                <img class="mt-3 max-w-2xl mx-auto" src="{{ '/assets/plots/section-introduction/formulas.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 1 : Distribution of weights for the different criteria on Beer Advocate and Rate Beer
                 </p>
               </div>
-              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-1">
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-introduction/plot1.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 2 : Average rating over time for Beer Advocate and Rate Beer
+                </p>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Omnis velit deserunt cupiditate molestiae
+                  Diving into the 2004 problems
                 </p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis velit deserunt cupiditate molestiae, provident itaque blanditiis odio perspiciatis earum similique corrupti repudiandae ex neque dolor officia quia cum quas iure?
+                <p class="text-gray-600 text-justify">
+                  The Internet is a recent phenomenon. Obviously the internet was not very popular in its early life, and we can expect 
+                  that Rate Beer and Beer Advocate were struggling to get some traffic. Thus we were expecting a lot of noise in the beginning 
+                  of the data. Indeed in the early 2000's, we see on Figure 2. that the noise is huge on the two websites.
+
+                  Doing a bit of research, we saw that the Internet really took off around 2004, and there was also a decrease in noise, 
+                  so we chose to focus our analysis on the period after 2004.
                 </p>
               </div>
-              <div class="rounded-lg bg-white px-8 py-4 shadow ring-1 ring-black/5 col-span-3">
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-introduction/pairplot_rb_vs_ba.jpeg' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 3 : Average rating over time for Beer Advocate and Rate Beer
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Inflation correction
+                  Cumulative users and ratings
                 </p>
-                <p class="text-gray-600">
-                  Now it is time to correct the inflation and the increasing trend of ratings. We computed a reference average 
-                  at the beginning of the period and we applied a correction to the ratings by dividing them by the ratio of the
-                  current average to the reference average. The corrected rating averages are shown in Figure 3.
+                <p class="text-gray-600 text-justify">
+                  First of all, the precedent argument concerning the 2004 threshold is supported by the cumulative active users and cumulative 
+                  ratings counts graphs. For both platforms, particularly BeerAdvocate, there was a noticeable first surge in the number of 
+                  users and ratings starting in 2004.<br><br>
+                  
+                  The graphs on Figure 3. show us two trends for the data. Between 1999 and 2012, RateBeer was more popular, they had more ratings 
+                  and more users than BeerAdvocate. After 2012, this trend turned around and BeerAdvocate became more popular.
+                  Currently, BeerAdvocate has two times more users and approximately 20% more ratings than his competitor RateBeer. 
+                  Numberwise the two data sets have a large amount of cumulative users and a large amount of cumulative ratings.
                 </p>
-                <img src="{{ '/assets/plots/inflation/plot3.png' | relative_url }}" alt="">
-                <p class="text-center text-sm text-gray-400">
-                  Figure 3 : Average beer rating over time corrected for inflation
+              </div>
+              
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  BeerAdvocate & RateBeer ratings distribution
+                </p>
+                <p class="text-gray-600 text-justify">
+                  The 2 sites provide scores out of \(5\), but the minimum score is \(0.5\) on RateBeer and \(1\) on BeerAdvocate, 
+                  so we can't compare the scores of the two platforms. The figure 4 shows the distribution of the ratings on the
+                  two platforms.<br><br>
+
+                  First of all we can observe that these distributions are kind of wavy. The number of values taken by BeerAdvocate 
+                  ratings is much larger than the number of values taken by RateBeer. This is due to the fact that the weighted average 
+                  used in RateBeer rounds to the first decimal, whereas BeerAdvocate does round at the second decimal.<br><br>
+                  
+                  The RateBeer values are much more frequent as they are less numerous, thus creating some small amplitude waves. 
+                  The waves of BeerAdvocate are much bigger due to the fact that we have a lot of values and those values are very 
+                  concentrated towards multiples of \(0.25\) (e.g. some users put the same rating for all criteria).
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-introduction/plot4.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 4 : Distribution of ratings for Beer Advocate and Rate Beer
                 </p>
               </div>
             </div>
@@ -123,82 +176,512 @@ layout: full
 
         <hr class="border-slate-300 my-16">
 
-        <section>
-          <div class="section-title pb-5">
+        <!----------------------------------------------------------------------
+        
+
+                                    PREFERENCES
+
+        
+        ----------------------------------------------------------------------->
+
+        <section id="preferences">
+          <div class="section-title pb-8">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 2</h2>
-            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-              NLP predictions
+            <p class="mx-auto mt-2 mb-6 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Preferences and ratings
             </p>
           </div>
           <div class="section-body">
-            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
-              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                Subsection 1
-              </p>
-              <p class="text-gray-600">
-                Users can leave text comments in addition to their digital notes. 
-                We all have different representations of numerical values, but texts 
-                are richer and can help us highlight differences between the comment 
-                and the final score given.
-                <br>
-                To analyze this, we used the pre-trained NLP model <kbd>nlptown/bert-base-multilingual-uncased-sentiment</kbd>,
-                which for each comment predicts an our between 1 and 5 corresponding to the text.
-
-                <img src="{{ '/assets/plots/nlp/plot1.png' | relative_url }}" alt="">
-                <p class="text-center text-sm text-gray-400">
-                  Figure X : TODO
+            <div class="grid grid-cols-4 gap-3">
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-preferences/plot1.jpeg' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 5 : Average ratings for Beer Advocate and Rate Beer among beer styles
                 </p>
+              </div>
 
-                <ul class="list-disc bg-red-100 p-4 ps-8 m-4">
-                  TODO
-                  <li>Analyze distribution (mean, global shape)</li>
-                  <li>Explain that shape is different since NLP model predicts integer rating</li>
-                </ul>
-              </p>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Average ratings for beer styles
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Now that we have a brief idea of the general trends in the data, let's take a look at 
+                  how beer styles can impact ratings. Figure 5. shows the average ratings for the different 
+                  styles on the 2 sites, and we can already see significant differences! We can see some 
+                  differences between the sites, but the big loser is definitely the Pale Lager, by far! 
+                  Meanwhile, Stouts and Wild/Sour beers lead the way with the highest averages! Let's delve 
+                  a little deeper into the differences to find out more about these results.<br><br>
 
-              <div class="flourish-embed flourish-chord" data-src="visualisation/20854207"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20854207/thumbnail" width="100%" alt="chord visualization" /></noscript></div>
+                  So, why are the ratings for some beer styles like Pale Lagers so low, while Stouts and Wild / Sour 
+                  beers seem to steal the spotlight? Could it be something about the beer itself, or is there another 
+                  factor at play? Let's dive to uncover what might be influencing these trends.<br><br>
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Style preferences and dominant styles
+                </p>
+                <p class="text-gray-600 text-justify">
+                  While we have looked at how beer styles differ in their average ratings, the next step is to explore the 
+                  people behind those ratings. Are certain groups of drinkers more influential than others? For this purpose, 
+                  let's consider 
+                  a user's dominant style as their most rated style over the course of their <em>"career"</em> (not necessarily 
+                  their highest rated style!).<br><br>
+
+                  The graph on the right shows the distribution of dominant styles on the 2 sites. The same trends can be 
+                  observed as in our local bars, with IPAs, Pale Ale, Pale Lager and Stout dominating, and each accounting 
+                  for a majority of users.<br><br>
+
+                  The others beer styles are then more niche, hence ratings could differ as people are not used to them. 
+                  This motivates the following section that investigates the average rating of beer styles given a certain 
+                  dominant style.
+                </p>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Distribution of dominant styles
+                </p>
+                <div class="grid grid-cols-2">
+                  <div>
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/20877187"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877187/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+                    <p class="text-gray-600 text-center">Beer Advocate</p>
+                  </div>
+                  <div>
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/20877247"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877247/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+                    <p class="text-gray-600 text-center">Rate Beer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-4">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Relationships between dominant styles
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Now that we are familiar with the concept of dominant style, we are ready to tackle the ratings. We have 
+                  investigated, for each dominant group, how their ratings on the different styles differ from their average 
+                  rating on all styles combined. In view of the large number of style combinations, we have retained only the 
+                  most significant impacts.<br><br>
+
+                  It can be a little complex to grasp at first glance, but a picture is worth a thousand words, so let's look 
+                  at the actual data!
+                </p>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20876930"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20876930/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Beer Advocate (Negative edges)
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Each style on the left represents a dominant style, and each edge represents a decrease in the 
+                  average score for a style on the right. Once again, it's a bad day for Pale Lager, which is 
+                  losing out to many styles and even to the group whose dominant beer is... Pale Lager!<br><br>
+
+                  Let's analyze one of the arcs in detail: the arc linking IPA to Pale Lager with a weight of \(0.68\) 
+                  means that the group of users whose dominant style is IPA rates Pale Lager on average \(0.68\) points 
+                  lower than their average across all styles.<br><br>
+
+                  After Pale Lager, it would seem that Dark Lager (lagers are definitely not a huge success) and 
+                  Speciality Beers (understandably) are not very enjoyed by many groups.
+                </p>
+              </div> 
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Beer Advocate (Positive edges)
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Now let's look at it the other way round: each arc from one dominant style to another represents 
+                  an increase in the average score relative to the group average. Stouts were already among the 
+                  best-rated beers on average, and we see a similar trend here.<br><br>
+
+                  Strong Ales and IPA follow closely on the 2 charts too. Here, the increases are dominated by the 
+                  Pale Lagers group (who seem to prefer other styles to Pale Lagers, a word of advice: stop drinking them), 
+                  as we've only plotted the most significant arcs.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20877110"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877110/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20877131"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877131/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Rate Beer (Negative edges)
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Let's move on to Rate Beer, analyzing the same 2 types of graphs. Are we seeing the same trends? 
+                  Yes, once again, Pale Lagers are leading the decline, followed, as in Beer Advocate, by Speciality 
+                  Beers and Dark Lagers. On average, Stout-dominant users rate Pale Lagers \(1.1\) points lower than 
+                  their average rating, that's huge!<br><br>
+
+                  And Pale Lager-dominant users impose an average reduction of \(0.37\) points on Pale Lagers (really, 
+                  just change of beer style)...
+                </p>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Rate Beer (Positive edges)
+                </p>
+                <p class="text-gray-600 text-justify">
+                  As far as increases are concerned, Stouts are the unanimous choice of many styles, with high average increases. 
+                  They are followed by Wild/Sour and Dark Ales, which also had the highest average ratings on the site. <br><br>
+
+                  We can also see that the Stouts obtain a clear validation of their dominant group with an increase of \(0.37\) 
+                  points compared to their average.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20877145"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877145/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+          
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-3">
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/20878597"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20878597/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-1">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  BeerAdvocate
+                </p>
+                <p class="text-gray-600 text-justify">
+                  We now have a better idea of the evaluation dynamics between the different styles, but let's take a step 
+                  back and analyze how this can influence ratings. The graph on the left shows the distribution of the dominant 
+                  groups who rated each style. For example, Stouts are rated by 539k users that are IPA-dominant, 302k that are Stout-dominant, and so on.<br><br>
+
+                  Thus we can see, for example, that Pale Lagers were mainly rated by IPA, Pale Ale and Pale Lager dominant 
+                  users, groups which inflicted on them respectively average decreases of \(0.68\), \(0.6\) and \(0.51\) points.
+                  It could explain why they have, on average, a lower rating than other styles.                  
+                </p>
+              </div>
+              
+              <div class="rounded-lg px-8 py-4 my-3 col-span-1">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  RateBeer
+                </p>
+                <p class="text-gray-600 text-justify">
+                  A similar trend can be seen on RateBeer, where Pale Lagers are once again rated mainly by IPA, 
+                  Pale Lager and Pale Ale-dominant users, who inflicted average decreases of \(0.86\), \(0.75\) and \(0.54\) points 
+                  respectively.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-3">
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/20878952"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20878952/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-3">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Conclusion
+                </p>
+                <p class="text-gray-600 text-justify">
+                  From what we have seen, IPA drinkers are clearly in charge of both Beer Advocate and Rate Beer. They are 
+                  not just drinking their favourite beers - they're deciding what's good and what's not for everyone else! 
+                  IPA is everywhere: it's the most rated style, the most influential in style relationships, and its fans seem 
+                  to rate almost every other beer style too. So what does this mean? IPA fans pretty much run the show on these 
+                  platforms. If you're one of them, congratulations, you're shaping the future of beer reviews. If not, you might 
+                  want to make friends with them, or just give in and join the IPA crowd. After all, it's their world and we're 
+                  just drinking in it.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         <hr class="border-slate-300 my-16">
 
-        <section>
-          <div class="section-title pb-5">
+        <!-- 
+        
+            EXPERTS
+        
+        -->
+        <section id="experts">
+          <div class="section-title pb-8">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 3</h2>
-            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-              Titre 3
+            <p class="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              I am something of a beer expert myself
             </p>
           </div>
           <div class="section-body">
-            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
-              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                Subsection 1
-              </p>
-              <p class="text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-              </p>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="rounded-lg px-8 py-4 my-3 col-span-4">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  What's an expert ?
+                </p>
+                <p class="text-gray-600 text-justify">
+                  In any activity, there is no secret behind the achievement of a high performance. An athlete winning a 
+                  medal at the olympics game, a mathematician cracking an unsolved problem, a chef creating the new dish 
+                  at a michelin-starred restaurant, all of them are linked by the experience accumulated through the years 
+                  of practice. Beer tasting is no exception, by tasting more beers, users should develop a certain knowledge. In this 
+                  section, we will develop a way to quantify this knowledge of beers by looking at the different beer styles.<br><br>
+                  
+                  Based on this quantification of knowledge, we will divide the users in two 
+                  classes: expert and non expert. Do you think your hipster uncle who went on a pub spree in London in his quest
+                  to find the best IPA would rate an IPA like your local barfly who's only been drinking Pale Lager ?
+                  Or even that one friend who went to University in Dublin and has only been drinking Stout ever since, would she rate 
+                  a Guinness like you?<br><br>
+
+                  Although an expert can be defined by the Oxford Dictionary as "a person with special knowledge, skill, or training 
+                  in something", how is such knowledge defined? Our approach is based on the following definition of local knowledge 
+                  of each beer style:
+
+                  \[
+                    K(t, u) = \sqrt[3]{\frac{|\mathcal{S}_{i}(t, u)|}{|\mathcal{S}_i(t)|}}
+                  \]
+
+                  where \(t\) is the time, \( \mathcal{S}_{i}(t, u)\) is the number of rated beers of style \(i\) by user \(u\) at time \(t\), and \(\mathcal{S}_{i}(t)\) is the total number of beers of beer style \(i\) available for ratings at time \(t\).<br><br>
+
+                  The idea behind this formula is that the knowledge is a representation of the share of beers rated by a user in a given style. 
+                  The cubic root around it is a simple transformation applied to spread the distribution of local knowledge in each 
+                  beer style. Expertise has a temporal dimension, as it is calculated in relation to all the beers available at a given moment.
+                  
+                  Someone who rated 30 IPAs when only 60 were available would have had a stronger knowledge score of this style at his time than 
+                  someone who rated 40 IPAs when 1000 were available. 
+                  
+                  <!-- An additional reason behind the share 
+                  is that there are sub styles in each beer style, therefore when the number of beers within a beer style increases 
+                  there are great chances for the number of sub beer styles to increase too to better organize the beers. Hence for a 
+                  same number of beers rated, a higher share would more likely means a higher cover of the existing sub beer styles and 
+                  therefore the user would be able to better leverage their “knowledge” when rating future beers. -->
+                </p>
+              </div>
+              
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2 row-span-1">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Knowledge distributions
+                </p>
+                <p class="text-gray-600 text-justify">
+                  The following charts on Figures 6. and 7. display the distribution of the best knowledge scores reached by users in each 
+                  beer style for both sites. 
+                  Only users who rated the beer style at least once have been included in the respective distributions. It appears that on 
+                  both websites, the beer style with the maximum local knowledge ever reached is Wild/Sour Beer while the style with 
+                  the highest starting knowledge is Hybrid Beer. In fact, the latter observation is not surprising since it's the style 
+                  with the smallest amount of both users and beers: fewer beers are needed to reach a correct knowledge score while all the 
+                  users are initiated beer drinkers since they know this niche style. Nonetheless all styles have a similar positive-skewed 
+                  distributions where the gap between the median and the top of the tail varies. This gap highlights the difficulty to be 
+                  amongst the users with the highest knowledge score. This is how we identified our experts by taking the top 10% of 
+                  users in each style.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot1.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 6 : Distribution of best local knowledge reached by users in each beer style on Beer Advocate
+                </p>
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot2.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 7 : Distribution of best local knowledge reached by users in each beer style on Rate Beer
+                </p>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot3.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 8 : Required knowledge to be an expert for each style on Beer Advocate
+                </p>
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot4.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 9 : Required knowledge to be an expert for each style on Rate Beer
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Required knowledge per style to be an expert
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Clearly, not all styles are equal when looking at Figures 8. and 9. The required knowledge to be an expert varies
+                  greatly from one style to another.
+                  The range of required local knowledge across beer styles goes from \(0.15\) to \(0.26\) in Beer Advocate and \(0.16\) to \(0.36\) 
+                  in Rate Beer with Pale Ale and Wild/Sour Beer having the lowest and highest values in both.<br><br>
+                  
+                  
+                  Based on the previously displayed distributions, two factors are impacting the thresholds to be an expert in a beer 
+                  style: the local knowledge of the best users and the number of users. Among several styles with a similar number of users, 
+                  a style with a greater average of local knowledge will have a higher threshold. This effect is illustrated by the 
+                  gap between Bock and Wild/Sour which both have around 30,000 users on Beer Advocate, but for the latter has 
+                  a higher threshold due its higher average of local knowledge.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-5 gap-3">
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Ratings of experts and non-experts per style
+                </p>
+                <p class="text-gray-600 text-justify">
+                  In order to assess and measure the impact of expertise on the ratings, we also define a second category 
+                  of users: the novices. Those are the users with the lowest knowledge in each beer style. They are identified 
+                  similarly by finding the knowledge threshold of the bottom 10% of users from the distribution of best local 
+                  knowledge reached by users in each beer style. We conducted T-tests on the means and F-tests on the variances 
+                  to assess the differences between their ratings on each beer style for both websites. We rejected the null 
+                  hypothesis for all results showed on Figures 10. and 11. where the height is the mean rating of the 
+                  group and the width is the standard deviation, meaning that the differences are statistically significant...
+                  Only the ratings made when the users were actually experts, respectively novices, were taken into account.<br><br>
+
+                  On average, we can observe that experts rate more harshly and tend to agree with each other because their variance is 
+                  lower.
+                </p>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-3">
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot5.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 10 : Average ratings of expert and non-expert users per style on Beer Advocate
+                </p>
+                <img class="mt-3" src="{{ '/assets/plots/section-expert/plot6.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure 11 : Average ratings of expert and non-expert users per style on Rate Beer
+                </p>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-4">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Conclusion
+                </p>
+                <p class="text-gray-600 text-justify">
+                  To assess the impact of one's expertise on the ratings given, we first defined the knowledge as the share 
+                  of the beers available in a style rated by the user. Then we leveraged this newly defined knowledge to 
+                  identify the users and the novices of our dataset for each style. With those two categories of users, 
+                  we've been able to assess and measure the impact of users erudition as the experts tends to deliver 
+                  more moderated ratings but with a higher inter-user agreement than the novices.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         <hr class="border-slate-300 my-16">
 
+
+        <!-- 
+        
+        NLP Ratings
+        
+        -->
+
         <section>
-          <div class="section-title pb-5">
+          <div class="section-title pb-8">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 4</h2>
-            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-              Titre 4
+            <p class="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              From Words to Wisdom - Exploring reviews using NLP
             </p>
           </div>
           <div class="section-body">
-            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
-              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                Subsection 1
-              </p>
-              <p class="text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-              </p>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Introduction and length of reviews
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Sometimes, it's difficult to express an opinion with numerical values only. Fortunately, 
+                  Beer Advocate and Rate Beer users have the opportunity to provide text comments to complement 
+                  their ratings. Let's analyze these reviews to see how they relate to user ratings, starting 
+                  with some data exploration.
+
+                  Regarding the length of the reviews, we observe that it is distributed as power law, many of the 
+                  ratings are very small and the greater the length goes the fewer reviews we have. The figure X
+                  illustrates this distribution for both sites.
+
+                  Analysing all these texts by hand would be a tedious task, but fortunately recent innovations in 
+                  natural language processing (NLP) make it much easier! We used the open-source multilingual model 
+                  <a class="font-mono underline" href="https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment">nlptown/bert-base-multilingual-uncased-sentiment</a>, 
+                  which is trained on product reviews, to predict a continuous score between 1 and 5 for each review.
+                  The model helps us to get an implied rating given the text review left by the user.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot2.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure X : Distributions of text lengths for Beer Advocate and Rate Beer (log scale)
+                </p>
+              </div>
+
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot1.png' | relative_url }}" alt="">
+                <p class="text-center text-sm text-gray-500">
+                  Figure X : Distributions of original ratings and predicted ratings for Beer Advocate and Rate Beer
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Distribution of ratings
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Let's compare the distribution of the predicted ratings and the distribution of the numerical ratings.
+                  The figure X illustrates the distribution of the original ratings and predicted ratings for Beer Advocate and Rate Beer.
+                  The ratings predicted by the model offer a more smooth distribution because we used a weighted average of the
+                  off-by-one predictions to enhance model performance (as recommended by the documentation of the model).
+
+                  We can see that predictions are a little lower on average for Beer Advocate and a little higher for Rate Beer compared to 
+                  the original ones, but it's difficult to interpret these results without information on the bias brought by the model.
+                </p>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-4">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Comparison of original rartings deviation between regions
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Now that we have a better idea of the distribution of predictions, let's see if the user's world region can have an 
+                  impact on the differences with the original ratings. Our intuition is to compare the differences between the original
+                  and the predicted rating for each users and see if there are some patterns depending on the world region of the user.
+                  <br><br>
+                  After conclusive ANOVA test results for both sites, we used Tukey pairwise tests to analyze the differences between 
+                  each pair of regions. Let's call \(\bar{R_i}\) the average difference of original rating and predicted rating for the
+                  region \(R_i\). To compare the regions, we will compare the average difference of \(\bar{R_i}\) and \(\bar{R_j}\) for each pair 
+                  \((i, j)\) of regions.
+                </p>
+              </div>
+
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Beer Advocate
+                </p>
+                <p class="text-gray-600 text-justify">
+                  This graph illustrates the statistically significant differences between means for each region. Each arc from left to 
+                  right means an increase in the gap from one region to another. For example, the arc linking "Central Europe" to "East Asia" 
+                  with a mean deviation of \(0.51\) means that, on average, the deviations between texts and ratings in Central Europe are
+                  \(0.51\) points lower than in East Asia.
+                  <br><br>
+                  Thus we can observe that the Central Europe, Northern Europe, Central America regions have smaller deviations than many other 
+                  regions, and therefore the textual reviews left are closer to the final scores given. It also seems that users in East Asia 
+                  tend to leave more negative comments in relation to their final ratings compared to other regions.
+                </p>
+              </div>
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20875037"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20875037/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+              
+              <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/20876102"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20876102/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-2">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Rate Beer
+                </p>
+                <p class="text-gray-600 text-justify">
+                  We observe similar trends to Beer Advocate on Rate Beers with Central Europe, Northern Europe and Central America 
+                  showing lower spreads than East Asia, North America and Northern Asia. In particular, there is on average \(0.51\) points 
+                  more difference between the texts and scores of users in East Asia than those in Central Europe.
+                </p>
+                <p class="text-lg font-medium mt-3 tracking-tight text-gray-950 max-lg:text-center">
+                  Conclusion
+                </p>
+                <p class="text-gray-600 text-justify">
+                  If we assume that textual reviews represent the true opinions of users, which can be justified by the fact that 
+                  they give more opportunity for explanation than a simple number, we can observe a certain inflationary trend in certain 
+                  regions. <br><br>
+                  
+                  Indeed, the final score is higher than the text predicted rating in East Asia, North America and North Asia compared to many 
+                  other regions. This may highlight regional and cultural differences, showing that we all have different ways of expressing 
+                  our tastes, which can have an impact on beer ratings.
+                </p> 
+              </div>
             </div>
           </div>
         </section>
@@ -206,20 +689,25 @@ layout: full
         <hr class="border-slate-300 my-16">
 
         <section>
-          <div class="section-title pb-5">
+          <div class="section-title pb-8" id="nlp">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 5</h2>
-            <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
-              Titre 5
+            <p class="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+              Conclusion
             </p>
           </div>
           <div class="section-body">
-            <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5">
-              <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                Subsection 1
-              </p>
-              <p class="text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-              </p>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="rounded-lg px-8 py-4 my-3 col-span-3">
+                <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  Conclusion
+                </p>
+                <p class="text-gray-600 text-justify">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet, assumenda repellat, id commodi ratione debitis saepe illum tempora similique sapiente rem cupiditate dignissimos accusantium vel, molestiae fugit asperiores odit.
+                </p>
+              </div>
+              <div class="rounded-lg px-8 py-4 my-3 col-span-1">
+                <img class="mt-3 rounded-lg" src="{{ '/assets/img/gorilla.png' | relative_url }}" alt="">
+              </div>
             </div>
           </div>
         </section>
@@ -227,22 +715,17 @@ layout: full
     </div>
 
     <div class="header flex items-center justify-center bg-gradient-to-tl from-amber-700 to-amber-300 h-72 px-6">
-      <h1 class="text-balance text-xl font-semibold text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, dolores aut sunt amet nihil reprehenderit voluptas commodi harum, accusantium consectetur sint quis praesentium voluptates, non quaerat ut fugit dignissimos hic?
-      </h1>
+      <div>
+        <h3 class="text-white text-2xl font-light uppercase"><kdb class="font-mono lowercase">pd.from_scratch()</kdb> - Team members 🍻</h3>
+        <div class="grid grid-cols-5 gap-5">
+          <p class="text-white text-center font-black">Arthur Dhonneur</p>
+          <p class="text-white text-center font-black">Léon Le Bohellec</p>
+          <p class="text-white text-center font-black">Martin Le Bras</p>
+          <p class="text-white text-center font-black">Jean Siffert</p>
+          <p class="text-white text-center font-black">Kilian Wan</p>
+        </div>
+      </div>
     </div>
-    
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-
-  {% if site.google_analytics %}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-    </script>
-  {% endif %}
   </body>
 </html>
