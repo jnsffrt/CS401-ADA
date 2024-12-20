@@ -564,7 +564,7 @@ layout: full
         
         -->
 
-        <section>
+        <section id="nlp">
           <div class="section-title pb-8">
             <h2 class="text-center text-base/7 font-semibold text-amber-600">Section 4</h2>
             <p class="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
@@ -578,33 +578,33 @@ layout: full
                   Introduction and length of reviews
                 </p>
                 <p class="text-gray-600 text-justify">
-                  Sometimes, it's difficult to express an opinion with numerical values only. Fortunately, 
+                  Sometimes, it's difficult to express an opinion with only numerical values. Fortunately, 
                   Beer Advocate and Rate Beer users have the opportunity to provide text comments to complement 
                   their ratings. Let's analyze these reviews to see how they relate to user ratings, starting 
                   with some data exploration.
 
                   Regarding the length of the reviews, we observe that it is distributed as power law, many of the 
-                  ratings are very small and the greater the length goes the fewer reviews we have. The figure X
+                  ratings are very small and the greater the length goes the fewer reviews we have. Figure 12.
                   illustrates this distribution for both sites.
 
                   Analysing all these texts by hand would be a tedious task, but fortunately recent innovations in 
                   natural language processing (NLP) make it much easier! We used the open-source multilingual model 
                   <a class="font-mono underline" href="https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment">nlptown/bert-base-multilingual-uncased-sentiment</a>, 
-                  which is trained on product reviews, to predict a continuous score between 1 and 5 for each review.
+                  which is trained on product reviews, to predict a continuous score between \(1\) and \(5\) for each review.
                   The model helps us to get an implied rating given the text review left by the user.
                 </p>
               </div>
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot2.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure X : Distributions of text lengths for Beer Advocate and Rate Beer (log scale)
+                  Figure 12 : Distributions of text lengths for Beer Advocate and Rate Beer (log scale)
                 </p>
               </div>
 
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot1.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure X : Distributions of original ratings and predicted ratings for Beer Advocate and Rate Beer
+                  Figure 13 : Distributions of original ratings and predicted ratings for Beer Advocate and Rate Beer
                 </p>
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
@@ -613,18 +613,18 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   Let's compare the distribution of the predicted ratings and the distribution of the numerical ratings.
-                  The figure X illustrates the distribution of the original ratings and predicted ratings for Beer Advocate and Rate Beer.
+                  Figure 13. illustrates the distribution of the original ratings and predicted ratings for Beer Advocate and Rate Beer.
                   The ratings predicted by the model offer a more smooth distribution because we used a weighted average of the
                   off-by-one predictions to enhance model performance (as recommended by the documentation of the model).
 
-                  We can see that predictions are a little lower on average for Beer Advocate and a little higher for Rate Beer compared to 
-                  the original ones, but it's difficult to interpret these results without information on the bias brought by the model.
+                  We can see that predictions are a slightly lower for Beer Advocate and a bit higher for Rate Beer on average compared to the original ones, but it's difficult 
+                  to interpret these results without information on the bias brought by the model.
                 </p>
               </div>
 
               <div class="rounded-lg px-8 py-4 my-3 col-span-4">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Comparison of original rartings deviation between regions
+                  Comparison of original ratings deviation between regions
                 </p>
                 <p class="text-gray-600 text-justify">
                   Now that we have a better idea of the distribution of predictions, let's see if the user's world region can have an 
@@ -644,7 +644,7 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   This graph illustrates the statistically significant differences between means for each region. Each arc from left to 
-                  right means an increase in the gap from one region to another. For example, the arc linking "Central Europe" to "East Asia" 
+                  right represents an increase in the gap from one region to another. For example, the arc linking "Central Europe" to "East Asia" 
                   with a mean deviation of \(0.51\) means that, on average, the deviations between texts and ratings in Central Europe are
                   \(0.51\) points lower than in East Asia.
                   <br><br>
@@ -665,7 +665,7 @@ layout: full
                   Rate Beer
                 </p>
                 <p class="text-gray-600 text-justify">
-                  We observe similar trends to Beer Advocate on Rate Beers with Central Europe, Northern Europe and Central America 
+                  The trends are similar between Beer Advocate and Rate Beers with Central Europe, Northern Europe and Central America 
                   showing lower spreads than East Asia, North America and Northern Asia. In particular, there is on average \(0.51\) points 
                   more difference between the texts and scores of users in East Asia than those in Central Europe.
                 </p>
@@ -677,7 +677,7 @@ layout: full
                   they give more opportunity for explanation than a simple number, we can observe a certain inflationary trend in certain 
                   regions. <br><br>
                   
-                  Indeed, the final score is higher than the text predicted rating in East Asia, North America and North Asia compared to many 
+                  Thus, the final score is higher than the text predicted rating in East Asia, North America and North Asia compared to many 
                   other regions. This may highlight regional and cultural differences, showing that we all have different ways of expressing 
                   our tastes, which can have an impact on beer ratings.
                 </p> 
