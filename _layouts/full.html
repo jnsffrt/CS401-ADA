@@ -54,8 +54,9 @@ layout: full
           <div class="section-body">
             <div class="rounded-lg px-8 py-4 mt-3 w-4/6 mx-auto border-2 border-amber-600 shadow-lg">
               <p class="text-gray-600 text-justify">
-                After many years of loyal services, beer has become (one of) our's best friends. Beer is always here when you need 
-                it, after a hard day at work, in front of our favorite sports event, to celebrate good news... Having a beer is always 
+                After many years of loyal service, beer has become (one of) our best friends. Beer is always here when you need 
+                it, after a hard day at work, in front of our favorite sports event or after handing out the milestone 3... <br><br>
+                Having a beer is always 
                 a good experience, so why not share this magnificent moment with the world. Beer ratings websites have been developed, 
                 giving you the opportunity to share your feelings after drinking one by leaving it a rating and a comment for the more 
                 passionates. Two of these websites are RateBeer and BeerAdvocate, and they will allow you to rate each beer you drink, 
@@ -82,7 +83,7 @@ layout: full
                   Now that you've analyzed the look, not so fast, wait a bit before drinking, you will have to smell it so 
                   you can note its scent through the <strong>Aroma</strong> rating. You're now free to do what you're here for : 
                   drink your beer. Doing so, you will have to conduct two analyses, first evaluate the flavors in the beer for 
-                  the <strong>Taste</strong> rating , and secondly feel its body, carbonation and astringency for the <strong>Palate</strong> 
+                  the <strong>Taste</strong> rating, and secondly feel its body, carbonation and astringency for the <strong>Palate</strong> 
                   rating.<br><br>
                   
                   Once all of these points are clear for you, you can relax and enjoy your beer on your own, without thinking 
@@ -91,7 +92,7 @@ layout: full
                   will then compute a weighted average of these to compute your final rating for the tested beer.<br><br>
 
                   Each criterion is scored out of 5, and the sites then calculate a weighted average using the weights shown in 
-                  Figure 1. While RateBeer places a greater importance to the Overall rating, Beer Advocate has more consideration 
+                  Figure 1. While RateBeer places a greater importance to the Overall rating, BeerAdvocate has more consideration 
                   for the Taste. On the other hand, for the two websites, Appearance and Palate are considered less essential for the 
                   final rating.
                 </p>
@@ -99,14 +100,14 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-4">
                 <img class="mt-3 max-w-2xl mx-auto" src="{{ '/assets/plots/section-introduction/formulas.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 1 : Distribution of weights for the different criteria on Beer Advocate and Rate Beer
+                  Figure 1 : Distribution of weights for the different criteria on BeerAdvocate and RateBeer
                 </p>
               </div>
 
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-introduction/plot1.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 2 : Average rating over time for Beer Advocate and Rate Beer
+                  Figure 2 : Average rating over time for BeerAdvocate and RateBeer
                 </p>
               </div>
 
@@ -116,8 +117,8 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   The Internet is a recent phenomenon. Obviously the internet was not very popular in its early life, and we can expect 
-                  that Rate Beer and Beer Advocate were struggling to get some traffic. Thus we were expecting a lot of noise in the beginning 
-                  of the data. Indeed in the early 2000's, we see on Figure 2. that the noise is huge on the two websites.
+                  that RateBeer and BeerAdvocate were struggling to get some traffic. Thus we were expecting a lot of noise in the beginning 
+                  of the data. In fact, in the early 2000's, we see on Figure 2. that the noise is huge on the two websites.
 
                   Doing a bit of research, we saw that the Internet really took off around 2004, and there was also a decrease in noise, 
                   so we chose to focus our analysis on the period after 2004.
@@ -127,7 +128,7 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-introduction/pairplot_rb_vs_ba.jpeg' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 3 : Average rating over time for Beer Advocate and Rate Beer
+                  Figure 3 : Average rating over time for BeerAdvocate and RateBeer
                 </p>
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
@@ -141,7 +142,7 @@ layout: full
                   
                   The graphs on Figure 3. show us two trends for the data. Between 1999 and 2012, RateBeer was more popular, they had more ratings 
                   and more users than BeerAdvocate. After 2012, this trend turned around and BeerAdvocate became more popular.
-                  Currently, BeerAdvocate has two times more users and approximately 20% more ratings than his competitor RateBeer. 
+                  Currently, BeerAdvocate has twice more users and approximately 20% more ratings than his competitor RateBeer. 
                   Numberwise the two data sets have a large amount of cumulative users and a large amount of cumulative ratings.
                 </p>
               </div>
@@ -152,7 +153,7 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   The 2 sites provide scores out of \(5\), but the minimum score is \(0.5\) on RateBeer and \(1\) on BeerAdvocate, 
-                  so we can't compare the scores of the two platforms. The figure 4 shows the distribution of the ratings on the
+                  so we can't compare the scores of the two platforms. Figure 4. shows the distribution of the ratings on the
                   two platforms.<br><br>
 
                   First of all we can observe that these distributions are kind of wavy. The number of values taken by BeerAdvocate 
@@ -167,7 +168,7 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-introduction/plot4.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 4 : Distribution of ratings for Beer Advocate and Rate Beer
+                  Figure 4 : Distribution of ratings for BeerAdvocate and RateBeer
                 </p>
               </div>
             </div>
@@ -196,7 +197,7 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-preferences/plot1.jpeg' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 5 : Average ratings for Beer Advocate and Rate Beer among beer styles
+                  Figure 5 : Average ratings for BeerAdvocate and RateBeer among beer styles
                 </p>
               </div>
 
@@ -245,11 +246,11 @@ layout: full
                 <div class="grid grid-cols-2">
                   <div>
                     <div class="flourish-embed flourish-chart" data-src="visualisation/20877187"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877187/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-                    <p class="text-gray-600 text-center">Beer Advocate</p>
+                    <p class="text-gray-600 text-center">BeerAdvocate</p>
                   </div>
                   <div>
                     <div class="flourish-embed flourish-chart" data-src="visualisation/20877247"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20877247/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-                    <p class="text-gray-600 text-center">Rate Beer</p>
+                    <p class="text-gray-600 text-center">RateBeer</p>
                   </div>
                 </div>
               </div>
@@ -274,7 +275,7 @@ layout: full
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Beer Advocate (Negative edges)
+                  BeerAdvocate (Negative edges)
                 </p>
                 <p class="text-gray-600 text-justify">
                   Each style on the left represents a dominant style, and each edge represents a decrease in the 
@@ -292,7 +293,7 @@ layout: full
 
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Beer Advocate (Positive edges)
+                  BeerAdvocate (Positive edges)
                 </p>
                 <p class="text-gray-600 text-justify">
                   Now let's look at it the other way round: each arc from one dominant style to another represents 
@@ -313,11 +314,11 @@ layout: full
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Rate Beer (Negative edges)
+                  RateBeer (Negative edges)
                 </p>
                 <p class="text-gray-600 text-justify">
-                  Let's move on to Rate Beer, analyzing the same 2 types of graphs. Are we seeing the same trends? 
-                  Yes, once again, Pale Lagers are leading the decline, followed, as in Beer Advocate, by Speciality 
+                  Let's move on to RateBeer, analyzing the same 2 types of graphs. Are we seeing the same trends? 
+                  Yes, once again, Pale Lagers are leading the decline, followed, as in BeerAdvocate, by Speciality 
                   Beers and Dark Lagers. On average, Stout-dominant users rate Pale Lagers \(1.1\) points lower than 
                   their average rating, that's huge!<br><br>
 
@@ -328,7 +329,7 @@ layout: full
 
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Rate Beer (Positive edges)
+                  RateBeer (Positive edges)
                 </p>
                 <p class="text-gray-600 text-justify">
                   As far as increases are concerned, Stouts are the unanimous choice of many styles, with high average increases. 
@@ -380,7 +381,7 @@ layout: full
                   Conclusion
                 </p>
                 <p class="text-gray-600 text-justify">
-                  From what we have seen, IPA drinkers are clearly in charge of both Beer Advocate and Rate Beer. They are 
+                  From what we have seen, IPA drinkers are clearly in charge of both BeerAdvocate and RateBeer. They are 
                   not just drinking their favourite beers - they're deciding what's good and what's not for everyone else! 
                   IPA is everywhere: it's the most rated style, the most influential in style relationships, and its fans seem 
                   to rate almost every other beer style too. So what does this mean? IPA fans pretty much run the show on these 
@@ -471,22 +472,22 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot1.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 6 : Distribution of best local knowledge reached by users in each beer style on Beer Advocate
+                  Figure 6 : Distribution of best local knowledge reached by users in each beer style on BeerAdvocate
                 </p>
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot2.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 7 : Distribution of best local knowledge reached by users in each beer style on Rate Beer
+                  Figure 7 : Distribution of best local knowledge reached by users in each beer style on RateBeer
                 </p>
               </div>
 
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot3.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 8 : Required knowledge to be an expert for each style on Beer Advocate
+                  Figure 8 : Required knowledge to be an expert for each style on BeerAdvocate
                 </p>
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot4.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 9 : Required knowledge to be an expert for each style on Rate Beer
+                  Figure 9 : Required knowledge to be an expert for each style on RateBeer
                 </p>
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
@@ -496,14 +497,14 @@ layout: full
                 <p class="text-gray-600 text-justify">
                   Clearly, not all styles are equal when looking at Figures 8. and 9. The required knowledge to be an expert varies
                   greatly from one style to another.
-                  The range of required local knowledge across beer styles goes from \(0.15\) to \(0.26\) in Beer Advocate and \(0.16\) to \(0.36\) 
-                  in Rate Beer with Pale Ale and Wild/Sour Beer having the lowest and highest values in both.<br><br>
+                  The range of required local knowledge across beer styles goes from \(0.15\) to \(0.26\) in BeerAdvocate and \(0.16\) to \(0.36\) 
+                  in RateBeer with Pale Ale and Wild/Sour Beer having the lowest and highest values in both.<br><br>
                   
                   
                   Based on the previously displayed distributions, two factors are impacting the thresholds to be an expert in a beer 
                   style: the local knowledge of the best users and the number of users. Among several styles with a similar number of users, 
                   a style with a greater average of local knowledge will have a higher threshold. This effect is illustrated by the 
-                  gap between Bock and Wild/Sour which both have around 30,000 users on Beer Advocate, but for the latter has 
+                  gap between Bock and Wild/Sour which both have around 30,000 users on BeerAdvocate, but for the latter has 
                   a higher threshold due its higher average of local knowledge.
                 </p>
               </div>
@@ -531,11 +532,11 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-3">
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot5.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 10 : Average ratings of expert and non-expert users per style on Beer Advocate
+                  Figure 10 : Average ratings of expert and non-expert users per style on BeerAdvocate
                 </p>
                 <img class="mt-3" src="{{ '/assets/plots/section-expert/plot6.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 11 : Average ratings of expert and non-expert users per style on Rate Beer
+                  Figure 11 : Average ratings of expert and non-expert users per style on RateBeer
                 </p>
               </div>
 
@@ -579,7 +580,7 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   Sometimes, it's difficult to express an opinion with only numerical values. Fortunately, 
-                  Beer Advocate and Rate Beer users have the opportunity to provide text comments to complement 
+                  BeerAdvocate and RateBeer users have the opportunity to provide text comments to complement 
                   their ratings. Let's analyze these reviews to see how they relate to user ratings, starting 
                   with some data exploration.
 
@@ -597,14 +598,14 @@ layout: full
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot2.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 12 : Distributions of text lengths for Beer Advocate and Rate Beer (log scale)
+                  Figure 12 : Distributions of text lengths for BeerAdvocate and RateBeer (log scale)
                 </p>
               </div>
 
               <div class="rounded-lg bg-white px-8 py-4 my-3 shadow ring-1 ring-black/5 col-span-2">
                 <img class="mt-3" src="{{ '/assets/plots/section-nlp/plot1.png' | relative_url }}" alt="">
                 <p class="text-center text-sm text-gray-500">
-                  Figure 13 : Distributions of original ratings and predicted ratings for Beer Advocate and Rate Beer
+                  Figure 13 : Distributions of original ratings and predicted ratings for BeerAdvocate and RateBeer
                 </p>
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
@@ -613,11 +614,11 @@ layout: full
                 </p>
                 <p class="text-gray-600 text-justify">
                   Let's compare the distribution of the predicted ratings and the distribution of the numerical ratings.
-                  Figure 13. illustrates the distribution of the original ratings and predicted ratings for Beer Advocate and Rate Beer.
+                  Figure 13. illustrates the distribution of the original ratings and predicted ratings for BeerAdvocate and RateBeer.
                   The ratings predicted by the model offer a more smooth distribution because we used a weighted average of the
                   off-by-one predictions to enhance model performance (as recommended by the documentation of the model).
 
-                  We can see that predictions are a slightly lower for Beer Advocate and a bit higher for Rate Beer on average compared to the original ones, but it's difficult 
+                  We can see that predictions are a slightly lower for BeerAdvocate and a bit higher for RateBeer on average compared to the original ones, but it's difficult 
                   to interpret these results without information on the bias brought by the model.
                 </p>
               </div>
@@ -640,7 +641,7 @@ layout: full
 
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Beer Advocate
+                  BeerAdvocate
                 </p>
                 <p class="text-gray-600 text-justify">
                   This graph illustrates the statistically significant differences between means for each region. Each arc from left to 
@@ -662,10 +663,10 @@ layout: full
               </div>
               <div class="rounded-lg px-8 py-4 my-3 col-span-2">
                 <p class="text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                  Rate Beer
+                  RateBeer
                 </p>
                 <p class="text-gray-600 text-justify">
-                  The trends are similar between Beer Advocate and Rate Beers with Central Europe, Northern Europe and Central America 
+                  The trends are similar between BeerAdvocate and RateBeer with Central Europe, Northern Europe and Central America 
                   showing lower spreads than East Asia, North America and Northern Asia. In particular, there is on average \(0.51\) points 
                   more difference between the texts and scores of users in East Asia than those in Central Europe.
                 </p>
